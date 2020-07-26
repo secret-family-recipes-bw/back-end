@@ -1,6 +1,6 @@
 
  
-  <h1 align="center"> :smiley_cat: Welcome to my Read me! :smiley_cat: </h1>
+  <h1 align="center"> :smiley_cat: Welcome to the Secret Family Recipe Read me! :smiley_cat: </h1>
 
 # :bento: :ramen: :pie: :cookie: :tropical_drink: :taco: :stuffed_flatbread: :burrito: :pizza: :green_salad: :bowl_with_spoon: :shallow_pan_of_food: :fries: :fried_egg:  :dumpling: :spaghetti: :moon_cake: 
 
@@ -27,8 +27,21 @@
  * Node :pirate_flag:
    * Express.js :white_flag:
  ## :atom: Data Model :electron:
- 
+ ```javascript
+ {
+    id: INT
+    username: STRING
+    password: STRING
+ }
+ ```
  ## :soon: End Points :end:
+ 
+ 
+| Method | End point | Description |
+| ------ | ----------------------- | -------------------------------------------------- |
+| POST   | `In Progress`        | Registers a user.                   |
+| POST   | `In Progress`           | Logs the user in and returns a token.              |
+
 
 # :bento: :ramen: :pie: :cookie: :tropical_drink: :taco: :stuffed_flatbread: :burrito: :pizza: :green_salad: :bowl_with_spoon: :shallow_pan_of_food: :fries: :fried_egg:  :dumpling: :spaghetti: :moon_cake: 
 
