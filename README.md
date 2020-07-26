@@ -27,6 +27,7 @@
  * Node :pirate_flag:
    * Express.js :white_flag:
  ## :atom: Data Model :electron:
+ ### Users
  ```javascript
  {
     id: INT
