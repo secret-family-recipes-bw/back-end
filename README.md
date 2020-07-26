@@ -6,7 +6,9 @@
 
 
 <p align="center">
+ :trollface:
 <img src ="http://www.simpleimageresizer.com/_uploads/photos/94c5bea8/68747470733a2f2f72696f74666573742e6f72672f77702d636f6e74656e742f75706c6f6164732f323031382f30332f6772616e646d61732d7265636970652e6a7067_35.jpg">
+ :trollface:
 <p align="center">
   <b>Some Links:</b><br>
   <a href="https://secret-family-recipes-2-api.herokuapp.com/">API</a> |
@@ -19,4 +21,12 @@
   
 </p>
 
+  <h1 align="center"> :scroll: API Documentation :scroll:</h1>
+  
+## :hammer_and_wrench: Backend Framework Used :closed_lock_with_key:
+ * Node :pirate_flag:
+   * Express.js :white_flag:
+ ## :atom: Data Model :electron:
+
 # :bento: :ramen: :pie: :cookie: :tropical_drink: :taco: :stuffed_flatbread: :burrito: :pizza: :green_salad: :bowl_with_spoon: :shallow_pan_of_food: :fries: :fried_egg:  :dumpling: :spaghetti: :moon_cake: 
+
