@@ -30,6 +30,11 @@
  * Node :pirate_flag:
    * Express.js :white_flag:
  ## :atom: Data Model :electron:
+ ## click on picture for bigger image if this is hard to read
+
+  <a href=" https://i.ibb.co/svm7jDM/datamodel.png/"><img src="http://www.simpleimageresizer.com/_uploads/photos/94c5bea8/datamodel_40.png" alt="1" border="0"></a>
+
+ 
  ### Users
  ```javascript
  {
