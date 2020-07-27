@@ -13,7 +13,10 @@
   <b>Some Links:</b><br>
   <a href="https://secret-family-recipes-2-api.herokuapp.com/">API</a> |
   <a href="#">Client</a> |
-  <a href="#">Marketing</a>
+  <a href="#">Marketing</a> |
+  <a href="#-scroll-api-documentation-scroll">Documentation</a> |
+  <a href="#soon-end-points-end">End Points</a> |
+  <a href="#atom-data-model-electron">Data Model</a> |
   <br><br>
  
  <p align="center">
