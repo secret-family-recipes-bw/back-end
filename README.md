@@ -48,9 +48,16 @@
  
 | Method | End point | Description |
 | ------ | ----------------------- | -------------------------------------------------- |
-| POST   | `In Progress`        | Registers a user.                   |
-| POST   | `In Progress`           | Logs the user in and returns a token.              |
-
+| POST   | `/auth/register`        | Registers a user.                   |
+| POST   | `/auth/login`           | Logs the user in and returns a token.              |
+| GET   | `/auth/users`           | returns a list of users usernames and name.              |
+```javascript
+{
+         //Bellow is the data you get back from the GET for users
+        "username": "TestUser1",
+        "name": "John Doe"
+    }
+```
 
 # :bento: :ramen: :pie: :cookie: :tropical_drink: :taco: :stuffed_flatbread: :burrito: :pizza: :green_salad: :bowl_with_spoon: :shallow_pan_of_food: :fries: :fried_egg:  :dumpling: :spaghetti: :moon_cake: 
 
