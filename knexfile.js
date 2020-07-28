@@ -40,22 +40,20 @@ module.exports = {
 
    // Heroku
    production: {
-    client: "sqlite3",
+    client: "pg",
     useNullAsDefault: true,
-    connection: {
-      filename: "./data/recipe.db3",
-    },
+    connection: process.env.DATABASE_URL,
     pool: {
-      afterCreate: (conn, done) => {
-        conn.run("PRAGMA foreign_keys = ON", done);
+      min:2,
+      max:10
       },
     },
     migrations: {
       directory: "./data/migrations",
+      tableName: 'knex_migrations'
     },
     seeds: {
       directory: "./data/seeds",
     },
   }
 
-}
