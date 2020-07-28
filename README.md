@@ -63,14 +63,15 @@
 | ------ | ----------------------- | -------------------------------------------------- |
 | POST   | `/auth/register`        | Registers a user.                   |
 | POST   | `/auth/login`           | Logs the user in and returns a token.              |
+| GET   | `/auth/users`           | returns a list of users usernames and name.              |
+### POST LOGIN RESPONSE
 ```javascript
 {   //Bellow is the response you get from logging in succesfully
     "message": "Welcome to our API",
     "token": "this will be a hashed value auto generated"
 }
 ```
-
-| GET   | `/auth/users`           | returns a list of users usernames and name.              |
+### GET USERS RESPONSE
 ```javascript
 {
          //Bellow is the data you get back from the GET for users
