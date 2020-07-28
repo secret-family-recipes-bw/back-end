@@ -8,9 +8,11 @@ module.exports = {
         connection: {
             filename: "./data/recipes.db3",
         },
+         // needed when using foreign keys
         pool: {
           afterCreate: (conn, done) => {
-            conn.run('PRAGMA foreign_keys = ON', done);
+             // runs after a connection is made to the sqlite engine
+            conn.run('PRAGMA foreign_keys = ON', done); // turn on FK enforcement
           },
         },
         migrations: {
