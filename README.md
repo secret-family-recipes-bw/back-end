@@ -136,7 +136,7 @@ Add Ingredient
 }
 ```
 ```javascript
-Update Recipe by ID (all fields required)
+Update Recipe by ID (all fields required except image, which can be left empty)
 {
     "user_id":"3",
     "title":"test recipe updated",
