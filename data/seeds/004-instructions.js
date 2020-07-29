@@ -1,6 +1,6 @@
 
 exports.seed = function(knex) {
-      return knex('instructions').insert([
+      return knex('Instructions').insert([
         {recipe_id: 1, step_number: 1, step: 'Preheat oven to 350 ºF.'},
         {recipe_id: 1, step_number: 2, step: ' Season pork chops with pepper and orange zest'},
         {recipe_id: 1, step_number: 3, step: 'In a large sauté pan, heat olive oil over medium heat  Turn over and brown the second side, an additional 2 minuste'},
