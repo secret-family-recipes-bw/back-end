@@ -11,16 +11,16 @@ exports.up = function (knex) {
         .createTable('Recipes', tbl => {
             tbl.increments()
             tbl.integer('user_id').unsigned().references('Users.id')
-                .notNullable().onDelete("CASCADE").onUpdate("CASCADE")
-            tbl.text('title', 128).unique().notNullable()
-            tbl.string('source', 128).notNullable()
-            tbl.string('category', 128).notNullable()
-            tbl.string('image', 128)
+            .notNullable().onDelete("CASCADE").onUpdate("CASCADE")
+            tbl.text('title', 256).unique().notNullable()
+            tbl.string('source', 256).notNullable()
+            tbl.string('category', 256).notNullable()
+            tbl.string('image', 256)
         })
 
         .createTable('Ingredients', tbl => {
             tbl.increments()
-            tbl.string('name', 128).unique().notNullable()
+            tbl.string('name', 256).unique().notNullable()
         })
 
         .createTable('Instructions', tbl => {
