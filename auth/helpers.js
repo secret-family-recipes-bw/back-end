@@ -63,7 +63,7 @@ function getInstructions(id) {
 //intermediary use
 function getRecipeByIngredient(id) {
     return db('Ingredients')
-        .select('Recipes.id as RecipeID', 'Recipes.title', 'Recipes.source', 'Recipes.category', 'Recipes.image', 'Ingredients.name as ingredient', 'ingredients.id as IngredientID')
+        .select('Recipes.id as RecipeID', 'Recipes.title', 'Recipes.source', 'Recipes.category', 'Recipes.image', 'Ingredients.name as ingredient', 'Ingredients.id as IngredientID')
         .join('RecipeServices', 'RecipeServices.ingredients_id', 'Ingredients.id')
         .join('Recipes', 'RecipeServices.recipe_id', 'Recipes.id')
         .where('Ingredients.id', '=', id)
