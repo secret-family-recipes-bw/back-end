@@ -15,7 +15,7 @@ module.exports = {
     addIngredients
 }
 function get() {
-    return db('Uers')
+    return db('Users')
         .select('Users.username', 'Users.name')
 }
 function getRecipes() {
