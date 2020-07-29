@@ -15,7 +15,7 @@ exports.up = function (knex) {
             tbl.string('title', 256).unique().notNullable()
             tbl.string('source', 256).notNullable()
             tbl.string('category', 256).notNullable()
-            tbl.string('image', 256)
+            tbl.text('image')
         })
 
         .createTable('Ingredients', tbl => {
