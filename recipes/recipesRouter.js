@@ -33,7 +33,7 @@ router.get('/:id/instructions', (req, res) => {
         })
 })
 
-router.get('/ingredients/:id/recipes', (req, res) => {
+router.get('/ingredients/:id', (req, res) => {
     const { id } = req.params
 
     helpers.getRecipeByIngredient(id)

@@ -99,7 +99,7 @@ function addIngredients(newIngredient, recipe_id, quantity) {
             return db('RecipeServices')
                 .insert({ recipe_id: recipe_id, ingredients_id: id, quantity:quantity })
                 .then(() => {
-                    return db('ingredients')
+                    return db('Ingredients')
                         .where({ id })
                         .first()
                 })
