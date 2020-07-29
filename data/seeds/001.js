@@ -2,9 +2,8 @@
 exports.seed = function (knex) {
 
   return knex('Users', 'Recipes', 'Ingredients', 'Instructions', 'RecipeServices')
-    .then(function () {
-      // Inserts seed entries
-      return knex('Users').insert([
+    .then( () => {
+      knex('Users').insert([
         { username: 'TestUser1', password: 'lol123', email: 'test1@gmail.com', name: 'John Doe' },
         { username: 'TestUser2', password: 'lol123', email: 'test2@gmail.com', name: 'Jane Doe' },
         { username: 'TestUser3', password: 'lol123', email: 'test3@gmail.com', name: 'John Doe' },
@@ -12,7 +11,7 @@ exports.seed = function (knex) {
     
     .then(function () {
       // Inserts seed entries
-      return knex('Recipes').insert([
+      knex('Recipes').insert([
         { user_id: 1, title: 'baked pork chops with apple cranberry sauce', category: 'dinner', source: 'mom', image: 'https://tmbidigitalassetsazure.blob.core.windows.net/rms3-prod/attachments/37/1200x1200/Cranberry-Apple-Pork-Chops_exps46377_SD132779A06_12_7bC_RMS.jpg' },
         { user_id: 2, title: 'empañapita', category: 'lunch', source: 'KTB_Family', image: 'https://ptclinic.com/img/photos/empanapita.jpg' },
         { user_id: 3, title: 'shepherd’s pie', category: 'dinner', source: 'KTB_Family', image: 'https://www.thewholesomedish.com/wp-content/uploads/2019/02/The-Best-Classic-Shepherds-Pie-550-500x500.jpg' },
@@ -20,7 +19,7 @@ exports.seed = function (knex) {
     })
     .then(function () {
       // Inserts seed entries
-      return knex('Ingredients').insert([
+       knex('Ingredients').insert([
         { name: 'pork chops' },
         { name: 'black pepper' },
         { name: 'dried cranberries' },
@@ -42,7 +41,7 @@ exports.seed = function (knex) {
     })
     .then(function () {
       // Inserts seed entries
-      return knex('Instructions').insert([
+     knex('Instructions').insert([
         { recipe_id: 1, step_number: 1, step: 'Preheat oven to 350 ºF.' },
         { recipe_id: 1, step_number: 2, step: ' Season pork chops with pepper and orange zest' },
         { recipe_id: 1, step_number: 3, step: 'In a large sauté pan, heat olive oil over medium heat  Turn over and brown the second side, an additional 2 minuste' },
@@ -61,7 +60,7 @@ exports.seed = function (knex) {
     })
     .then(function () {
       // Inserts seed entries
-      return knex('RecipeServices').insert([
+       knex('RecipeServices').insert([
         { ingredients_id: 1, recipe_id: 1, quantity: 2 },
         { ingredients_id: 2, recipe_id: 1, quantity: 1 },
         { ingredients_id: 3, recipe_id: 1, quantity: 8 },
