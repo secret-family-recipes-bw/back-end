@@ -32,7 +32,7 @@
  ## :atom: Data Model :electron:
  ## click on picture for bigger image if this is hard to read
 
-  <a href="https://i.ibb.co/svm7jDM/datamodel.png"><img src="http://www.simpleimageresizer.com/_uploads/photos/94c5bea8/datamodel_40.png" alt="1" border="0"></a>
+  <a href="https://i.ibb.co/FB09hWm/image-1.png"><img src="https://i.ibb.co/FB09hWm/image-1.png" alt="1" border="0"></a>
 
  
  ### Users
@@ -49,13 +49,39 @@
   ```javascript
  {
     id: INT
+    user_id: INT
     title: STRING
-    ingredients: STRING
-    instructions: TEXT
     source: STRING
+    category: STRING
     image: STRING
  }
  ```
+ ### Ingredients
+  ```javascript
+ {
+    id: INT
+    name: STRING
+ }
+ ```
+  ### Instructions
+  ```javascript
+ {
+    id: INT (not string, image hasn't been updated)
+    recipe_id: INT
+    step_number: INT
+    step: TEXT(700)
+ }
+ ```
+  ### RecipeServices
+  ```javascript
+ {
+    id: INT
+    recipe_id: INT
+    ingredients_id: INT
+    quantity: floating number
+ }
+ ```
+ 
  ## :soon: End Points :end:
  
  
@@ -78,6 +104,45 @@
         "username": "TestUser1",
         "name": "John Doe"
     }
+```
+## Recipes End points
+| Method | End point | Description |
+| ------ | ----------------------- | -------------------------------------------------- |
+| POST   | `/recipes/addrecipe`         | Adds a new Recipe.                   |
+| POST   | `/recipes/:id/addingredient/`| Adds an ingredient to a Recipe  with the quantity amount for a specific recipe.id.  |
+| PUT   | `/recipes/updaterecipe/:id`  | Update an existing recipe by the recipe ID.              |
+| DELETE   | `/recipes/:id`  | Deletes an existing recipe by the recipe ID.              |
+| GET   | `/recipes/:id`                   | returns a recipe by the given ID + instructions              |
+| GET   | `/recipes/:id/instructions`                   | returns a list of instructions for a specific recipe              |
+| GET   | `/recipes`                   | returns a list of recipes.              |
+| GET   | `/recipes/ingredients/:id/`                   | returns the ingredient ID, Ingredient name, and the recipe information of which that ingredient is used in.   |
+
+```javascript
+Add Recipe
+{
+    "user_id":"3", //user that made the recipe (required)
+    "title":"test recipe", //name of your desired recipe (required)
+    "source":"testingsource", //source (required)
+    "category":"lunch" //desired category (required)
+    "image": "string formate" // may change default from null (if left empty) to a generic SFR Logo/image
+}
+```
+
+```javascript
+Add Ingredient
+{
+   "name":"name of your ingredient",
+   "quantity" : "numeric value you desire"
+}
+```
+```javascript
+Update Recipe by ID (all fields required)
+{
+    "user_id":"3",
+    "title":"test recipe updated",
+    "source":"testingsource",
+    "category":"lunch"
+}
 ```
 
 
