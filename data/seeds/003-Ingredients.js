@@ -20,5 +20,6 @@ exports.seed = function(knex) {
         {name: 'grilled chicken'},
         {name: 'fresh parsley'},
 
-      ]);
+      ])
+      .then(() => console.log("\n== Seed data for ingredients table added. ==\n"));
     }
