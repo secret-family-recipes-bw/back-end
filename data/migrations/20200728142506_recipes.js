@@ -27,7 +27,7 @@ exports.up = function (knex) {
             tbl.increments()
             tbl.integer('recipe_id', 128).unsigned().notNullable().references('Recipes.id').onDelete("CASCADE").onUpdate("CASCADE")
             tbl.integer('step_number').notNullable().unsigned()
-            tbl.text('step', 700).notNullable()
+            tbl.text('step', 'LONGTEXT').notNullable()
         })
 
         .createTable('RecipeServices', tbl => {
