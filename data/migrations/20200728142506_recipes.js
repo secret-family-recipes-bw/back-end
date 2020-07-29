@@ -11,7 +11,7 @@ exports.up = function (knex) {
         .createTable('Recipes', tbl => {
             tbl.increments()
             tbl.integer('user_id').unsigned().references('Users.id')
-            .notNullable().onDelete("CASCADE").onUpdate("CASCADE")
+                .notNullable().onDelete("CASCADE").onUpdate("CASCADE")
             tbl.text('title', 128).unique().notNullable()
             tbl.string('source', 128).notNullable()
             tbl.string('category', 128).notNullable()
@@ -32,7 +32,7 @@ exports.up = function (knex) {
 
         .createTable('RecipeServices', tbl => {
             tbl.integer('ingredients_id').notNullable().references('Ingredients.id').onDelete("CASCADE").onUpdate("CASCADE")
-            tbl.integer('recipe_id').notNullable().references('Recipes.Id').onDelete("CASCADE").onUpdate("CASCADE")
+            tbl.integer('recipe_id').notNullable().references('Recipes.id').onDelete("CASCADE").onUpdate("CASCADE")
             tbl.float('quantity', 128).notNullable().unsigned()
         })
 };
