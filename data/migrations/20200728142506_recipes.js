@@ -12,7 +12,7 @@ exports.up = function (knex) {
             tbl.increments()
             tbl.integer('user_id').unsigned().references('Users.id')
             .notNullable().onDelete("CASCADE").onUpdate("CASCADE")
-            tbl.text('title', 256).unique().notNullable()
+            tbl.string('title', 256).unique().notNullable()
             tbl.string('source', 256).notNullable()
             tbl.string('category', 256).notNullable()
             tbl.string('image', 256)
