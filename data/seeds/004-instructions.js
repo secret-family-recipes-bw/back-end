@@ -1,5 +1,6 @@
 
 exports.seed = function(knex) {
+  
       return knex('Instructions').insert([
         {recipe_id: 1, step_number: 1, step: 'Preheat oven to 350 ºF.'},
         {recipe_id: 1, step_number: 2, step: ' Season pork chops with pepper and orange zest'},
@@ -15,6 +16,6 @@ exports.seed = function(knex) {
         {recipe_id: 3, step_number: 3, step: 'When potatoes have about 5 minutes left to cook, preheat the oven to 450 ºF.'},
         {recipe_id: 3, step_number: 4, step: ' When the potatoes are done, drain and dry them well, then mash with a potato masher or big fork.'},
         {recipe_id: 3, step_number: 5, step: 'Bake in the preheated oven for about 10 minutes, or until the potatoes are browned and chicken is reheated (to a minimum internal temperature of 165 ºF). Serve immediately.'},
-    ]);
-  
-};
+    ])
+    .then(() => console.log("\n== Seed data for instructions table added. ==\n"));
+}

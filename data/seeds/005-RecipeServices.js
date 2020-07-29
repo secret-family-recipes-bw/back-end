@@ -18,6 +18,6 @@ exports.seed = function (knex) {
     { ingredients_id: 15, recipe_id: 3, quantity: 2 },
     { ingredients_id: 16, recipe_id: 3, quantity: 2 },
 
-  ]);
-
+  ])
+  .then(() => console.log("\n== Seed data for recipeServices table added. ==\n"));
 };
