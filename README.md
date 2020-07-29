@@ -41,6 +41,19 @@
     id: INT
     username: STRING
     password: STRING
+    email: STRING
+    name: TEXT
+ }
+ ```
+ ### Recipes
+  ```javascript
+ {
+    id: INT
+    title: STRING
+    ingredients: STRING
+    instructions: TEXT
+    source: STRING
+    image: STRING
  }
  ```
  ## :soon: End Points :end:
@@ -48,8 +61,24 @@
  
 | Method | End point | Description |
 | ------ | ----------------------- | -------------------------------------------------- |
-| POST   | `In Progress`        | Registers a user.                   |
-| POST   | `In Progress`           | Logs the user in and returns a token.              |
+| POST   | `/auth/register`        | Registers a user.                   |
+| POST   | `/auth/login`           | Logs the user in and returns a token.              |
+| GET   | `/auth/users`           | returns a list of users usernames and name.              |
+### POST LOGIN RESPONSE
+```javascript
+{   //Bellow is the response you get from logging in succesfully
+    "message": "Welcome to our API",
+    "token": "this will be a hashed value auto generated"
+}
+```
+### GET USERS RESPONSE
+```javascript
+{
+         //Bellow is the data you get back from the GET for users
+        "username": "TestUser1",
+        "name": "John Doe"
+    }
+```
 
 
 # :bento: :ramen: :pie: :cookie: :tropical_drink: :taco: :stuffed_flatbread: :burrito: :pizza: :green_salad: :bowl_with_spoon: :shallow_pan_of_food: :fries: :fried_egg:  :dumpling: :spaghetti: :moon_cake: 
