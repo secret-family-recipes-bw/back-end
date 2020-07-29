@@ -1,15 +1,13 @@
 
 exports.seed = function (knex) {
 
-  return knex('Users', 'Recipes', 'Ingredients', 'Instructions', 'RecipeServices')
-    .then(function () {
-      // Inserts seed entries
+ 
       return knex('Users').insert([
         { username: 'TestUser1', password: 'lol123', email: 'test1@gmail.com', name: 'John Doe' },
         { username: 'TestUser2', password: 'lol123', email: 'test2@gmail.com', name: 'Jane Doe' },
         { username: 'TestUser3', password: 'lol123', email: 'test3@gmail.com', name: 'John Doe' },
-      ]);
-    })
+      ])
+    
     .then(function () {
       // Inserts seed entries
       return knex('Recipes').insert([
