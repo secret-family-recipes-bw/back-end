@@ -90,6 +90,7 @@
 | POST   | `/auth/register`        | Registers a user.                   |
 | POST   | `/auth/login`           | Logs the user in and returns a token.              |
 | GET   | `/auth/users`           | returns a list of users usernames and name.              |
+| GET   | `/auth/users/:id`           | returns a user by their ID.              |
 ### POST LOGIN RESPONSE
 ```javascript
 {   //Bellow is the response you get from logging in succesfully
