@@ -70,7 +70,7 @@ function getRecipeByIngredient(id) {
 }
 
 function addRecipe(newRecipe) {
-    return db('recipes')
+    return db('Recipes')
         .insert(newRecipe, 'id')
         .then(([id]) => {
             return getRecipebyId(id)
