@@ -29,6 +29,17 @@ router.get('/users', (req, res) => {
             res.status(500).json({ errMessage: err })
         })
 })
+router.get('/users/:id', (req, res) => {
+    const {id} = req.params
+    helpers.findUserById(id)
+        .then(result => {
+            res.status(200).json(result)
+        })
+        .catch(err => {
+            console.log(err)
+            res.status(500).json({ errMessage: err })
+        })
+})
 
 router.post('/register', (req, res) => {
     const credentials = req.body

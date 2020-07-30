@@ -74,9 +74,10 @@ router.delete('/:id', (req, res) => {
         })
 })
 
-router.post('/addrecipe', (req, res) => {
+router.post('/addrecipe/', (req, res) => {
+    const {id} = req.params
     const newRecipe = req.body
-    helpers.addRecipe(newRecipe)
+    helpers.addRecipe(newRecipe, id)
         .then(result => {
             res.status(200).json(result)
         })
