@@ -3,9 +3,12 @@ const helmet = require('helmet')
 const server = express();
 const authRouter = require('../auth/authRouter')
 const recipesRouter = require('../recipes/recipesRouter')
+const cors = require('cors')
 server.use(express.json())
 server.use(helmet())
 
+
+server.use(cors())
 const hMessage = process.env.HGREET || 'api is online'
 server.use('/recipes', recipesRouter)
 server.use('/auth', authRouter)
