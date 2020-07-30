@@ -33,21 +33,21 @@ function getRecipebyId(id) {
     // })
 }
 function login(username) {
-    return db('users')
+    return db('Users')
         .where(username)
         .select('users.id', 'users.username', 'users.password')
         .orderBy('users.id')
 }
 
 function register(user) {
-    return db('users')
+    return db('Users')
         .insert(user, 'id')
         .then(([id]) => {
             return findUserById(id)
         })
 }
 function findUserById(id) {
-    return db('users')
+    return db('Users')
         .where({ id })
         .first()
         .select('users.id', 'users.username', 'users.email', 'users.name')
@@ -97,7 +97,7 @@ function addIngredients(newIngredient, recipe_id, quantity) {
         .insert(newIngredient, 'id')
         .then(([id]) => {
             return db('RecipeServices')
-                .insert({ recipe_id: recipe_id, ingredients_id: id, quantity:quantity })
+                .insert({ recipe_id: recipe_id, ingredients_id: id, quantity: quantity })
                 .then(() => {
                     return db('Ingredients')
                         .where({ id })
