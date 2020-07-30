@@ -35,8 +35,8 @@ function getRecipebyId(id) {
 function login(username) {
     return db('Users')
         .where(username)
-        .select('users.id', 'users.username', 'users.password')
-        .orderBy('users.id')
+        .select('Users.id', 'Users.username', 'Users.password')
+        .orderBy('Users.id')
 }
 
 function register(user) {
@@ -50,7 +50,7 @@ function findUserById(id) {
     return db('Users')
         .where({ id })
         .first()
-        .select('users.id', 'users.username', 'users.email', 'users.name')
+        .select('Users.id', 'Users.username', 'Users.email', 'Users.name')
 }
 
 function getInstructions(id) {
