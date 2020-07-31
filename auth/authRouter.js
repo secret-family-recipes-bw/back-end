@@ -30,7 +30,7 @@ router.get('/users', (req, res) => {
         })
 })
 router.get('/users/:id', (req, res) => {
-    const {id} = req.params
+    const { id } = req.params
     helpers.findUserById(id)
         .then(result => {
             res.status(200).json(result)
@@ -53,7 +53,7 @@ router.post('/register', (req, res) => {
         helpers.register(credentials)
             .then(user => {
                 const token = makeJwt(user)
-                res.status(200).json({ user, token })
+                res.status(201).json({ user, token })
             })
             .catch(err => {
                 console.log(err)

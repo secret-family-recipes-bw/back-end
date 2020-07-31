@@ -1,0 +1,131 @@
+// const request = require('supertest')
+// const db = require('../../data/connection')
+// const server = require('../../api/server')
+// const users = require('../../auth/authRouter')
+// const bcryptjs = require('bcryptjs')
+
+
+// describe(' Users End to End Testing', () => {
+//     beforeEach(async () => {
+//         // const userSeed = [
+//         //     { username: 'test1', password: 'lol123', email: 'shighetari@gmail.com', name: "Francisco" },
+//         //     { username: 'test2', password: 'lol123', email: 'marcia@gmail.com', name: "Marta" },
+//         //     { username: 'test3', password: 'lol123', email: 'buddy@gmail.com', name: "Buddy" }
+//         // ]
+//         const user1 = { username: 'test1', password: 'lol123', email: 'shighetari@gmail.com', name: "Francisco" }
+//         const user2 = { username: 'test2', password: 'lol123', email: 'marcia@gmail.com', name: "Marta" }
+//         const user3 = { username: 'test3', password: 'lol123', email: 'buddy@gmail.com', name: "Buddy" }
+//         const rounds = 8
+//         const hash1 = bcryptjs.hashSync(user1.password, rounds)
+//         const hash2 = bcryptjs.hashSync(user2.password, rounds)
+//         const hash3 = bcryptjs.hashSync(user3.password, rounds)
+//         user1.password = hash1
+//         user2.password = hash2
+//         user3.password = hash3
+//         await db('Users').truncate()
+//         await db('Users')
+//             .insert([user1, user2, user3])
+//     })
+
+
+//     //~~ GET	/auth/users	returns a list of users usernames and name.
+//     describe('GET users', () => {
+//         it('Returns res status 200 & responds with a JSON Type', () => {
+//             return request(server).get('/auth/users')
+//                 .then(res => {
+//                     expect(res.status).toBe(200)
+//                     expect(res.type).toMatch(/json/i);
+//                 })
+
+//         })
+//         it('should return an array with 3 users inside', () => {
+//             return request(server).get('/auth/users')
+//                 .then(res => {
+//                     expect(res.body).toHaveLength(3)
+//                 })
+//         })
+//     })
+//     //~~ GET	/auth/users/:id	returns a user by their ID.
+//     describe('GET users by ID', () => {
+//         it('should return res status 200 & respond with a JSON type.', () => {
+//             return request(server).get('/auth/users/1')
+//                 .then(res => {
+//                     expect(res.status).toBe(200)
+//                     expect(res.type).toMatch(/json/i);
+//                 })
+//         })
+
+//         it('return back 1 user with the ID of 2', () => {
+//             return request(server).get('/auth/users/2')
+//                 .then(res => {
+//                     expect(res.status).toBe(200)
+//                     expect(res.body).toStrictEqual({ id: 2, username: 'test2', email: 'marcia@gmail.com', name: "Marta" })
+//                 })
+//         })
+
+//     })
+//     //~~ POST	/auth/register	Registers a user.
+//     describe('POST Register', () => {
+//         it('should register a user with res status 201 and the body should be JSON type', () => {
+//             return request(server).post('/auth/register')
+//                 .send({
+//                     username: "testuser1337",
+//                     password: "lol123",
+//                     email: "1232@gmail.com",
+//                     name: "Francisco"
+//                 })
+//                 .then(res => {
+//                     expect(res.status).toBe(201)
+//                     expect(res.type).toMatch(/json/i);
+
+//                 })
+//         })
+
+//         it('should add a 2nd user, then scan to see if the user was added to the DB', () => {
+
+
+//             return request(server).post('/auth/register')
+//                 .send({
+//                     username: "testuser8008",
+//                     password: "lol123",
+//                     email: "1232@gmail.com",
+//                     name: "Francisco"
+//                 })
+//                 .then((res) => {
+//                     return request(server).get('/auth/users')
+//                         .then(res => {
+//                             expect(res.body).toHaveLength(4)
+//                             expect(res.status).toBe(200)
+
+//                         })
+
+//                 })
+
+//         })
+//     })
+//     //~~ POST	/auth/login	Logs the user in and returns a token.
+//     describe('POST Login', () => {
+//         it('should login and return a status 200 with the login message', () => {
+//             return request(server).post('/auth/login')
+//                 .send({ username: "test1", password: "lol123" })
+//                 .then(res => {
+//                     expect(res.status).toBe(200)
+//                     expect(res.body.message).toStrictEqual("Welcome to our API")
+//                 })
+//         })
+
+//         it('should login and return JSON Type and returns a token', () => {
+//             return request(server).post('/auth/login')
+//                 .send({ username: "test1", password: "lol123" })
+//                 .then(res => {
+//                     expect(res.type).toMatch(/json/i);
+//                     expect(res.body.token).toBeTruthy()
+//                 })
+//         })
+//     })
+
+// })
+
+// // beforeEach(async () => {
+
+// // })
